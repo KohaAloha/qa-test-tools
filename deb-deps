@@ -11,3 +11,4 @@ libyaml-perl
 perl
 perl-base
 perl-modules
+libfile-chdir-perl

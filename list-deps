@@ -36,8 +36,9 @@ my %ignore = (
 
 
 use File::Slurp;
+#use Get::
 
-my   @lines = read_file( 'deps' ) ; 
+my   @lines = read_file( 'cpan-deps' ) ; 
 my $deps =  \@lines;
 
 my $prefix = "^/usr/((lib|share)/perl5|(lib|share)/perl/[0-9.]+)";
