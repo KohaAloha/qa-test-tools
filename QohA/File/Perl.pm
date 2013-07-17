@@ -15,7 +15,8 @@ use QohA::Git;
 use QohA::Report;
 
 
-our $pc_rc =  dirname( $INC{'QohA/File/Perl.pm'} ) . '/../../perlcriticrc';
+#our $pc_rc =  dirname( $INC{'QohA/File/Perl.pm'} ) . '/../../perlcriticrc';
+our $pc_rc =  './perlcriticrc';
 die "Koha's $pc_rc file is missing..." unless  ( -e  $pc_rc );
 
 has 'pass' => (
