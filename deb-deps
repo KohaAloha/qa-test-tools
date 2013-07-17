@@ -15,3 +15,4 @@ perl
 perl-base
 perl-modules
 libppi-perl
+libppix-regexp-perl
