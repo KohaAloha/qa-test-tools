@@ -23,15 +23,17 @@ eval {
     Git::Repository->run( init => $git_repo );
 
     my $options = {
+        git => '/path/to/some/other/git',
         env => {
             GIT_COMMITTER_EMAIL => 'book@cpan.org',
             GIT_COMMITTER_NAME  => 'Philippe Bruhat (BooK)',
         },
     };
-    my $r = Git::Repository->new(
+    my $git = Git::Repository->new(
         work_tree => $git_repo,
         $options
     );
+
 
     is( ref $git, 'Git::Repository', "Is a Git::Repository object");
     opendir( my $dir_patch, $dir_patch_path );
