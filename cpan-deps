@@ -10,7 +10,6 @@ List::Compare
 List::MoreUtils
 Modern::Perl
 Moo
-Perl::Critic
 Pod::Usage
 Smart::Comments
 Template
