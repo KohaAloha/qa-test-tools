@@ -1,4 +1,4 @@
-package C4::TmplToken;
+package M4::TmplToken;
 
 # Copyright Tamil 2011
 #
@@ -20,7 +20,7 @@ package C4::TmplToken;
 
 use strict;
 #use warnings; FIXME - Bug 2505
-use C4::TmplTokenType;
+use M4::TmplTokenType;
 require Exporter;
 
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
@@ -103,8 +103,8 @@ sub set_children {
 # FIXME: DIRECTIVE is not necessarily TMPL_VAR !!
 sub parameters_and_fields {
     my $this = shift;
-    return map { $_->type == C4::TmplTokenType::DIRECTIVE? $_:
-		($_->type == C4::TmplTokenType::TAG
+    return map { $_->type == M4::TmplTokenType::DIRECTIVE? $_:
+		($_->type == M4::TmplTokenType::TAG
 			&& $_->string =~ /^<input\b/is)? $_: ()}
 	    @{$this->{'_kids'}};
 }
@@ -112,7 +112,7 @@ sub parameters_and_fields {
 # only meaningful for TEXT_PARAMETRIZED tokens
 sub anchors {
     my $this = shift;
-    return map { $_->type == C4::TmplTokenType::TAG && $_->string =~ /^<a\b/is? $_: ()} @{$this->{'_kids'}};
+    return map { $_->type == M4::TmplTokenType::TAG && $_->string =~ /^<a\b/is? $_: ()} @{$this->{'_kids'}};
 }
 
 # only meaningful for TEXT_PARAMETRIZED tokens
@@ -148,27 +148,27 @@ sub set_js_data {
 
 sub tag_p {
     my $this = shift;
-    return $this->type == C4::TmplTokenType::TAG;
+    return $this->type == M4::TmplTokenType::TAG;
 }
 
 sub cdata_p {
     my $this = shift;
-    return $this->type == C4::TmplTokenType::CDATA;
+    return $this->type == M4::TmplTokenType::CDATA;
 }
 
 sub text_p {
     my $this = shift;
-    return $this->type == C4::TmplTokenType::TEXT;
+    return $this->type == M4::TmplTokenType::TEXT;
 }
 
 sub text_parametrized_p {
     my $this = shift;
-    return $this->type == C4::TmplTokenType::TEXT_PARAMETRIZED;
+    return $this->type == M4::TmplTokenType::TEXT_PARAMETRIZED;
 }
 
 sub directive_p {
     my $this = shift;
-    return $this->type == C4::TmplTokenType::DIRECTIVE;
+    return $this->type == M4::TmplTokenType::DIRECTIVE;
 }
 
 ###############################################################################

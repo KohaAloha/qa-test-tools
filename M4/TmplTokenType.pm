@@ -1,4 +1,4 @@
-package C4::TmplTokenType;
+package M4::TmplTokenType;
 
 # Copyright 2011 Tamil
 #
@@ -27,7 +27,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 
 =head1 NAME
 
-C4::TmplTokenType.pm - Types of TmplToken objects
+M4::TmplTokenType.pm - Types of TmplToken objects
 
 =head1 DESCRIPTION
 
@@ -60,7 +60,7 @@ use vars qw( $_text $_text_parametrized $_cdata
 
 BEGIN {
     my $new = sub {
-	my $this = 'C4::TmplTokenType';#shift;
+	my $this = 'M4::TmplTokenType';#shift;
 	my $class = ref($this) || $this;
 	my $self = {};
 	bless $self, $class;

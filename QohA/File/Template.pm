@@ -9,7 +9,21 @@ use IPC::Cmd qw[can_run run];
 use File::Spec;
 
 use QohA::Report;
-use C4::TTParser;
+
+eval {
+    use C4::TTParser;
+};
+
+
+if ($@) {
+
+    use M4::TTParser;
+};
+
+
+
+
+
 use Template;
 
 has 'pass' => (
