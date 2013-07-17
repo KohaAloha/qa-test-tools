@@ -14,8 +14,13 @@ use IPC::Cmd qw[can_run run];
 use QohA::Git;
 use QohA::Report;
 
+    use Cwd;
+    my $dir = getcwd;
 
-our $pc_rc =  dirname( $INC{'QohA/File/Perl.pm'} ) . '/../../perlcriticrc';
+
+#our $pc_rc =  dirname( $INC{'QohA/File/Perl.pm'} ) . '/../../perlcriticrc';
+
+our $pc_rc =  $dir  . '/t/perlcriticrc';
 die "Koha's $pc_rc file is missing..." unless  ( -e  $pc_rc );
 
 has 'pass' => (
