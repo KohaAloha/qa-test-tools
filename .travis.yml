@@ -6,7 +6,7 @@ perl:
 before_install:
     - sudo apt-get install libmodern-perl-perl
     - sudo xargs aptitude --schedule-only install < ./deb-deps
-    - sudo aptitude install
+    - sudo aptitude -y install
 #    - cpanm Test::Pod # optional dependency
 
 #install: bash -x ./install-deps.sh
