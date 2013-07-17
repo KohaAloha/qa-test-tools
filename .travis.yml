@@ -3,5 +3,10 @@ perl:
 #  - "5.16"
 #  - "5.14"
 
+before_install:
+    - sudo apt-get install libmodern-perl-perl
+#    - cpanm Test::Pod # optional dependency
+
 install: bash -x ./install-deps.sh
+
 script: perl ./t/Perl.t
