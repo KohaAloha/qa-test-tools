@@ -4,3 +4,4 @@ perl:
   - "5.14"
 
 install: bash -x ./install-deps.sh
+script: perl ./t/Perl.t
