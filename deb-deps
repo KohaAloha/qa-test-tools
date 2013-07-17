@@ -12,4 +12,5 @@ libtest-simple-perl
 libxml-libxml-perl
 libyaml-perl
 perl
+perl-base
 perl-modules

@@ -8,8 +8,6 @@ Git::Repository
 IPC::Cmd
 List::Compare
 List::MoreUtils
-Modern::Perl
-Moo
 Pod::Usage
 Smart::Comments
 Template
