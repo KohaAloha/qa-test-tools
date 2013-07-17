@@ -11,13 +11,13 @@ use File::Spec;
 use QohA::Report;
 
 eval {
-    use C4::TTParser;
+    use M4::TTParser;
 };
 
 
 if ($@) {
 
-    use M4::TTParser;
+#    use M4::TTParser;
 };
 
 
