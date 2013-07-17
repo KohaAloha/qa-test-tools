@@ -5,7 +5,7 @@ perl:
 
 before_install:
     - sudo apt-get install aptitude
-    - sudo xargs aptitude --schedule-only install < ./deb-deps
+    - sudo xargs aptitude --schedule-only install < ./cpan-deps
     - sudo aptitude -y install
 #    - cpanm Test::Pod # optional dependency
 
