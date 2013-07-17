@@ -5,11 +5,11 @@ perl:
 
 before_install:
     - sudo apt-get install aptitude
-    - sudo xargs aptitude --schedule-only install < ./cpan-deps
+    - sudo xargs aptitude --schedule-only install < ./deb-deps
     - sudo aptitude -y install
 #    - cpanm Test::Pod # optional dependency
 
-install: bash -x ./install-perl-deps.sh
+install: bash -x ./install-cpan-deps.sh
 #install: bash -x ./install-deps2.sh
 
 script: perl ./t/Perl.t
