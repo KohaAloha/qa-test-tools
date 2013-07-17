@@ -9,7 +9,11 @@ before_install:
     - sudo aptitude -y install
 #    - cpanm Test::Pod # optional dependency
 
-install: bash -x ./install-cpan-deps.sh
+install:
+     - bash -x ./install-cpan-deps.sh
+     - cpanm -v Test::Perl::Critic::Progressive
+
+
 #install: bash -x ./install-deps2.sh
 
 script: perl ./t/Perl.t

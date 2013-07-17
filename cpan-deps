@@ -12,6 +12,5 @@ Pod::Usage
 Smart::Comments
 Template
 Test::More
-Test::Perl::Critic::Progressive
 XML::LibXML
 YAML
