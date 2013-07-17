@@ -20,7 +20,7 @@
 use strict;
 use warnings;
 
-use C4::Installer::PerlDependencies;
+#use C4::Installer::PerlDependencies;
 
 # These are packages that may not be in the apt archive in a way that
 # apt-file can find, e.g. in the Koha repo rather than the regular
@@ -34,17 +34,22 @@ my %ignore = (
     'CHI::Driver::Memcached' => 1,
 );
 
-my $deps = $C4::Installer::PerlDependencies::PERL_DEPS;
+
+use File::Slurp;
+
+my   @lines = read_file( 'deps' ) ; 
+my $deps =  \@lines;
 
 my $prefix = "^/usr/((lib|share)/perl5|(lib|share)/perl/[0-9.]+)";
 
-foreach my $module ( keys %$deps ) {
-    next if $ignore{$module};
-    my $ver     = $deps->{$module}->{'min_ver'};
+foreach my $module ( @lines ) {
+    chomp $module;;
+#    next if $ignore{$module};
+#    my $ver     = $deps->{$module}->{'min_ver'};
     my $subpath = $module;
     $subpath =~ s,::,/,g;
 
-    warn qq| apt-file -l -x search "$prefix/$subpath.pm\$" |;
+#    warn qq| apt-file -l -x search "$prefix/$subpath.pm\$" |;
 
     my $output = qx(apt-file -l -x search "$prefix/$subpath.pm\$");
 
