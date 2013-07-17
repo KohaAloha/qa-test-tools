@@ -14,4 +14,3 @@ Template
 Test::More
 XML::LibXML
 YAML
-Test::Perl::Critic::Progressive
