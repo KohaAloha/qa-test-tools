@@ -23,7 +23,6 @@ eval {
     Git::Repository->run( init => $git_repo );
 
     my $options = {
-        git => '/path/to/some/other/git',
         env => {
             GIT_COMMITTER_EMAIL => 'book@cpan.org',
             GIT_COMMITTER_NAME  => 'Philippe Bruhat (BooK)',
