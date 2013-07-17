@@ -1,4 +1,6 @@
+libfile-chdir-perl
 libfile-spec-perl
+libgit-repository-perl
 liblist-compare-perl
 liblist-moreutils-perl
 libmodern-perl-perl
@@ -6,9 +8,8 @@ libmoo-perl
 libperl-critic-perl
 libsmart-comments-perl
 libtemplate-perl
+libtest-simple-perl 
 libxml-libxml-perl
 libyaml-perl
 perl
-perl-base
 perl-modules
-libfile-chdir-perl
