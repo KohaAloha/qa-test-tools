@@ -9,7 +9,21 @@ use IPC::Cmd qw[can_run run];
 use File::Spec;
 
 use QohA::Report;
-use C4::TTParser;
+
+eval {
+    use M4::TTParser;
+};
+
+
+if ($@) {
+
+#    use M4::TTParser;
+};
+
+
+
+
+
 use Template;
 
 has 'pass' => (
@@ -46,7 +60,7 @@ sub run_checks {
 sub check_tt_valid {
     my ($self) = @_;
     return q{} unless -e $self->path;
-    my $parser = C4::TTParser->new;
+    my $parser = M4::TTParser->new;
     my $filename = $self->abspath;
     $parser->build_tokens( $filename );
     my @lines;

@@ -8,13 +8,9 @@ Git::Repository
 IPC::Cmd
 List::Compare
 List::MoreUtils
-Modern::Perl
-Moo
-Perl::Critic
 Pod::Usage
 Smart::Comments
 Template
 Test::More
-Test::Perl::Critic::Progressive
 XML::LibXML
 YAML

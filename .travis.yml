@@ -1,0 +1,22 @@
+language: perl
+perl:
+#  - "5.16"
+#  - "5.14"
+
+before_install:
+    - sudo apt-get install aptitude
+    - sudo xargs aptitude --schedule-only install < ./deb-deps
+    - sudo aptitude -y install
+    - git config --global user.email "you@example.com"
+    - git config --global user.name "Your Name"
+#    - cpanm Test::Pod # optional dependency
+
+install:
+     - bash -x ./install-cpan-deps.sh
+     - cpanm -S -v Test::Perl::Critic::Progressive
+
+
+#install: bash -x ./install-deps2.sh
+#install: bash -x ./install-deps2.sh
+
+script: perl ./t/Perl.t
