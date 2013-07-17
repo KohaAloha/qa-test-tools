@@ -1,3 +1,4 @@
+Modern::Perl
 Cwd
 Data::Dumper
 File::Basename
@@ -6,7 +7,6 @@ Getopt::Long
 IPC::Cmd
 List::Compare
 List::MoreUtils
-Modern::Perl
 Moo
 Perl::Critic
 Pod::Usage
