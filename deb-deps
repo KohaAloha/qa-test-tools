@@ -14,3 +14,4 @@ libyaml-perl
 perl
 perl-base
 perl-modules
+libppi-perl
