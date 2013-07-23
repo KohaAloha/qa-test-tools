@@ -34,3 +34,4 @@ DESCRIPTION
 6/ run a qa-test on your Koha git repo, for the last commit
     $ qa -c 1 [-v 2]
 
+"!https://travis-ci.org/KohaAloha/qa-test-tools.png!":https://travis-ci.org/KohaAloha/qa-test-tools
