@@ -6,4 +6,4 @@
 cat ./cpan-deps | cpanm  --notest
 
 #cat ./cpan-deps2 | cpanm  --installdeps --notest
-cat ./cpan-deps2 | cpanm  --notest
+#cat ./cpan-deps2 | cpanm  --notest
