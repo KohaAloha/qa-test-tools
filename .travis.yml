@@ -20,8 +20,8 @@ before_install:
 #    - cpanm Test::Pod # optional dependency
 
 install:
-    - export PERL5LIB="${PERL5LIB}":/usr/lib/perl5
-    - export | grep PERL5LIB
+#    - export PERL5LIB="${PERL5LIB}":/usr/lib/perl5
+#    - export | grep PERL5LIB
     - cpanm --version
     - bash -x ./install-cpan-deps.sh
     - cpanm -v --installdeps XML::LibXML
