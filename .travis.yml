@@ -8,40 +8,11 @@ perl:
   - "5.19.2"
 
 before_install:
-
     - git config --global user.email "you@example.com"
     - git config --global user.name "Your Name"
-    - cpanm --version
-#    - cpanm -v Git::Repository
     - sudo apt-get install aptitude
-#    - sudo xargs aptitude --schedule-only install < ./deb-deps
-#    - sudo aptitude -y install
-
-
-#    - cpanm Test::Pod # optional dependency
 
 install:
-#    - export PERL5LIB="${PERL5LIB}":/usr/lib/perl5
-#    - export | grep PERL5LIB
-    - cpanm --version
-#    - cpanm -v --installdeps XML::LibXML
     - bash -x ./install-cpan-deps.sh
-#    - bash -x ./install-cpan-deps2.sh
-#    - cpanm -v --installdeps --notest Test::Perl::Critic::Progressive
-#    - cpanm -v --notest Test::Perl::Critic::Progressive
-#    - cpanm --installdeps Template
-#    - cpanm -v -f --installdeps Modern::Perl
-#    - cpanm -v -f Modern::Perl
-#    - cpanm -v -S -f --installdeps Modern::Perl
-#    - cpanm -v -S -f Modern::Perl
-#    - export | grep PERL5LIB
-    - export
-#    - export PERL5LIB="/usr/lib/perl5:/usr/share/perl5"
-    - cpanm --version
-    - export
-#    - export | grep PERL5LIB
-
-#install: bash -x ./install-deps2.sh
-#install: bash -x ./install-deps2.sh
 
 script: perl ./t/Perl.t
