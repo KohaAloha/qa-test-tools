@@ -32,8 +32,10 @@ install:
 #    - cpanm -v -S --installdeps Modern::Perl
 #    - export | grep PERL5LIB
     - export
-#    - export PERL5LIB="${PERL5LIB}:/usr/lib/perl5:/usr/share/perl5"
-#    - export | grep PERL5LIB
+    - export PERL5LIB="/usr/lib/perl5:/usr/share/perl5"
+    - cpanm --version
+    - export
+    - export | grep PERL5LIB
 
 #install: bash -x ./install-deps2.sh
 #install: bash -x ./install-deps2.sh
