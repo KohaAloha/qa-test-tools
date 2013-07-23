@@ -27,6 +27,7 @@ install:
     - cpanm -v --installdeps XML::LibXML
     - bash -x ./install-cpan-deps2.sh
     - cpanm -v --installdeps --notest Test::Perl::Critic::Progressive
+    - cpanm -v --notest Test::Perl::Critic::Progressive
     - cpanm --installdeps Template
     - cpanm -v -f --installdeps Modern::Perl
     - cpanm -v -f Modern::Perl
