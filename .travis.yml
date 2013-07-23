@@ -22,11 +22,10 @@ before_install:
 install:
      - export PERL5LIB="${PERL5LIB}":/usr/share/perl5
      - export | grep PERL5LIB
- #    - cpanm -v -f System::Command
      - bash -x ./install-cpan-deps.sh
      - cpanm -v -f XML::LibXML
-     #- cpanm -v Test::Perl::Critic::Progressive
-     - cpanm -v -f Test::Perl::Critic::Progressive
+     - cpanm -v -f Test::Perl::Critic::Progressive Template
+     - cpanm -v -f Template
 
 #install: bash -x ./install-deps2.sh
 #install: bash -x ./install-deps2.sh
