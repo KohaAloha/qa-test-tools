@@ -15,6 +15,8 @@ before_install:
 #    - cpanm Test::Pod # optional dependency
 
 install:
+     - export PERL5LIB="${PERL5LIB}":/usr/share/perl5
+     - export | grep PERL5LIB
      - bash -x ./install-cpan-deps.sh
      - cpanm -S -v Modern::Perl
      - cpanm -S -v Test::Perl::Critic::Progressive
