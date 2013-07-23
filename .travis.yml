@@ -16,8 +16,8 @@ before_install:
 
 install:
      - bash -x ./install-cpan-deps.sh
+     - cpanm -S -v Modern::Perl
      - cpanm -S -v Test::Perl::Critic::Progressive
-
 
 #install: bash -x ./install-deps2.sh
 #install: bash -x ./install-deps2.sh
