@@ -1,4 +1,5 @@
 Modern::Perl
+Test::Perl::Critic::Progressive
 Cwd
 Data::Dumper
 File::Basename
