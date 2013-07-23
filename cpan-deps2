@@ -1,0 +1,9 @@
+B::Keywords
+PPIx::Utilities::Statement
+Pod::Spell
+Perl::Tidy
+String::Format
+PPIx::Utilities::Node
+PPIx::Regexp
+Config::Tiny
+Email::Address
