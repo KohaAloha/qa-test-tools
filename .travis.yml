@@ -21,7 +21,7 @@ install:
      - cpanm -S -v Modern::Perl
      - cpanm -S -v Test::Perl::Critic::Progressive
      - cpanm -S -v System::Command
-     - cpanm -S -v -f Git::Repository
+     - cpanm -S -v -fn Git::Repository
 
 #install: bash -x ./install-deps2.sh
 #install: bash -x ./install-deps2.sh
