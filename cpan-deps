@@ -24,4 +24,3 @@ PPIx::Utilities::Node
 PPIx::Regexp
 Config::Tiny
 Email::Address
-Test::Perl::Critic::Progressive
