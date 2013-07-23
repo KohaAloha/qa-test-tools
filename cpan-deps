@@ -5,7 +5,6 @@ File::Basename
 File::Spec
 File::chdir
 Getopt::Long
-Git::Repository
 IPC::Cmd
 List::Compare
 List::MoreUtils
