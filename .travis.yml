@@ -28,6 +28,7 @@ install:
     - bash -x ./install-cpan-deps2.sh
     - cpanm -v --installdeps Test::Perl::Critic::Progressive
     - cpanm --installdeps Template
+    - cpanm -v --installdeps Modern::Perl
     - export PERL5LIB="${PERL5LIB}":/usr/lib/perl5
     - export | grep PERL5LIB
 
