@@ -1,4 +1,5 @@
 Modern::Perl
+Git::Repository
 Cwd
 Data::Dumper
 File::Basename

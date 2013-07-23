@@ -11,7 +11,7 @@ before_install:
     - git config --global user.email "you@example.com"
     - git config --global user.name "Your Name"
     - cpanm --version
-    - cpanm -v Git::Repository
+#    - cpanm -v Git::Repository
     - sudo apt-get install aptitude
 #    - sudo xargs aptitude --schedule-only install < ./deb-deps
 #    - sudo aptitude -y install
