@@ -10,7 +10,7 @@ perl:
 before_install:
     - git config --global user.email "you@example.com"
     - git config --global user.name "Your Name"
-    - sudo apt-get install aptitude
+#    - sudo apt-get install aptitude
 
 install:
     - bash -x ./install-cpan-deps.sh
