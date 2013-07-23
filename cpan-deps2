@@ -7,3 +7,5 @@ PPIx::Utilities::Node
 PPIx::Regexp
 Config::Tiny
 Email::Address
+Perl::Critic
+Perl::Critic::Utils
