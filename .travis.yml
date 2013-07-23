@@ -18,10 +18,10 @@ install:
      - export PERL5LIB="${PERL5LIB}":/usr/share/perl5
      - export | grep PERL5LIB
      - bash -x ./install-cpan-deps.sh
-#     - cpanm -S -v Modern::Perl
-     - cpanm -S -v Test::Perl::Critic::Progressive
-#     - cpanm -S -v System::Command
-#     - cpanm -S -v -fn Git::Repository
+     - cpanm -v Modern::Perl
+     - cpanm -v Test::Perl::Critic::Progressive
+     - cpanm -v System::Command
+     - cpanm -v Git::Repository
 
 #install: bash -x ./install-deps2.sh
 #install: bash -x ./install-deps2.sh
