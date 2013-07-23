@@ -24,9 +24,9 @@ install:
     - export | grep PERL5LIB
     - cpanm --version 
     - bash -x ./install-cpan-deps.sh
-    - cpanm -v -f XML::LibXML
-    - cpanm -v -f Test::Perl::Critic::Progressive
-    - cpanm --installdeps --notest Template
+    - cpanm -v --installdeps XML::LibXML
+    - cpanm -v --installdeps Test::Perl::Critic::Progressive
+    - cpanm --installdeps Template
 
 #install: bash -x ./install-deps2.sh
 #install: bash -x ./install-deps2.sh
