@@ -28,6 +28,8 @@ install:
     - bash -x ./install-cpan-deps2.sh
     - cpanm -v --installdeps Test::Perl::Critic::Progressive
     - cpanm --installdeps Template
+    - export PERL5LIB="${PERL5LIB}":/usr/lib/perl5
+    - export | grep PERL5LIB
 
 #install: bash -x ./install-deps2.sh
 #install: bash -x ./install-deps2.sh
