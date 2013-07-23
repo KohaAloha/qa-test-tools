@@ -2,6 +2,4 @@ File::HomeDir
 File::Which
 Readonly::XS
 Term::ANSIColor
-Perl::Critic
-Perl::Critic::Utils
 Test::Perl::Critic::Progressive
