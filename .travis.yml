@@ -10,14 +10,15 @@ perl:
 before_install:
     - git config --global user.email "you@example.com"
     - git config --global user.name "Your Name"
-    - mkdir koha-tmp
-    - cd koha-tmp
-    - git clone --depth=50 --branch=trav1 git://github.com/KohaAloha/Koha-Dev.git KohaAloha/Koha-Dev
+#    - mkdir koha-tmp
+    - git clone --depth=50 --branch=trav1 https://github.com/Koha-Community/Koha
 
-    - export KOHA_CONF=/home/travis/build/KohaAloha/qa-test-tools/koha-tmp/blib/KOHA_CONF_DIR/koha-conf.xml
+
+    - cd Koha
+    - export KOHA_CONF=/home/travis/build/KohaAloha/qa-test-tools/Koha/blib/KOHA_CONF_DIR/koha-conf.xml
 
     - export DESTDIR=/tmp
-    - export PERL5LIB="/home/travis/build/KohaAloha/qa-test-tools/koha-tmp:/usr/lib/perl5"
+    - export PERL5LIB="/home/travis/build/KohaAloha/qa-test-tools/Koha
     - export RUN_DATABASE_TESTS=no
     - export TEST_QA=1
 
@@ -75,8 +76,8 @@ install:
 
 
     - export PERL5LIB="-{PERL5LIB}":\
-            /home/travis/build/KohaAloha/qa-test-tools/koha-tmp/C4:\
-            /home/travis/build/KohaAloha/qa-test-tools/koha-tmp/C4/SIP:\
+            /home/travis/build/KohaAloha/qa-test-tools/Koha/C4:\
+            /home/travis/build/KohaAloha/qa-test-tools/Koha/C4/SIP:\
             /home/travis/build/KohaAloha/qa-test-tools/:\
 
     - alias qa="/home/travis/build/KohaAloha/qa-test-tools/koha-qa.pl"
