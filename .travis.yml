@@ -16,9 +16,6 @@ before_install:
 
     - export KOHA_CONF=/home/travis/build/KohaAloha/qa-test-tools/koha-tmp/blib/KOHA_CONF_DIR/koha-conf.xml
 
-
-before_install:
-
     - export DESTDIR=/tmp
     - export PERL5LIB="/home/travis/build/KohaAloha/qa-test-tools/koha-tmp:/usr/lib/perl5"
     - export RUN_DATABASE_TESTS=no
