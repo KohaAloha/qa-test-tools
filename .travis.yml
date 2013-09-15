@@ -1,18 +1,92 @@
 language: perl
 perl:
-  - "5.10"
-  - "5.12"
-  - "5.14"
-  - "5.16"
+#  - "5.10"
+#  - "5.12"
+#  - "5.14"
+#  - "5.16"
 #  - "5.18"
 #  - "5.19.2"
 
 before_install:
     - git config --global user.email "you@example.com"
     - git config --global user.name "Your Name"
-#    - sudo apt-get install aptitude
+
+
+
+- mkdir koha-tmp
+- cd koha-tmp
+-  git clone --depth=50 --branch=trav1 git://github.com/KohaAloha/Koha-Dev.git KohaAloha/Koha-Dev
+
+- export KOHA_CONF=/home/travis/build/KohaAloha/qa-test-tools/koha-tmp/blib/KOHA_CONF_DIR/koha-conf.xml
+
+
+before_install:
+
+    - export DESTDIR=/tmp
+    - export PERL5LIB="/home/travis/build/KohaAloha/qa-test-tools/koha-tmp:/usr/lib/perl5"
+    - export RUN_DATABASE_TESTS=no
+    - export TEST_QA=1
+
+    - export
+    - cpanm --version
+
+    - cat /etc/apt/sources.list
+    - ls -l  /etc/apt/sources.list
+    - sudo chmod 777 /etc/apt/sources.list
+    - ls -l  /etc/apt/sources.list
+    - cat /etc/apt/sources.list
+    - pwd
+#   - cd /tmp ; wget 
+    - sudo echo 'deb http://debian.koha-community.org/koha squeeze main' >>  /etc/apt/sources.list
+
+    - wget -O - http://debian.koha-community.org/koha/gpg.asc | sudo apt-key add
+ 
+    - sudo apt-get update
+    - sudo apt-get install  $( < install_misc/debian.packages)
+
+
+    - sudo mysql -e 'create database koha'
+    - sudo mysql -e "GRANT ALL PRIVILEGES ON koha.* TO 'kohaadmin'@'localhost' IDENTIFIED BY 'katikoan' "
+    - sudo mysql -e 'flush privileges'
+#    - exit
+
+    - sudo mysql koha -e 'show processlist'
+
+#    - cpanm --notest Devel::Cover Devel::Cover::Report::Clover
 
 install:
-    - bash -x ./install-cpan-deps.sh
+#    - mv Makefile Makefile.old > /dev/null 2>&1
+#    - make clean
+    - source install_misc/environment_Makefile.PL
+    - sudo useradd koha 
+#    - sudo adduser koha1 --disabled-password
 
-script: perl ./t/Perl.t
+    - perl Makefile.PL
+    - make
+    - sudo make install
+
+#
+# installed koha...
+#
+
+install:
+-  xargs sudo aptitude --schedule-only install < deb-deps.txt
+-  sudo aptitude install
+
+#cat ./cpan-deps | cpanm  --notest
+- cat ./cpan-deps | cpanm  --notest
+
+
+- export PERL5LIB="-{PERL5LIB}":\
+            /home/travis/build/KohaAloha/qa-test-tools/koha-tmp/C4:\
+            /home/travis/build/KohaAloha/qa-test-tools/koha-tmp/C4/SIP:\
+            /home/travis/build/KohaAloha/qa-test-tools/:\
+
+- alias qa="/home/travis/build/KohaAloha/qa-test-tools/koha-qa.pl"
+
+
+script: 
+- cd  ~/
+- prove -v
+
+
