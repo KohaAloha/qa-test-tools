@@ -36,7 +36,7 @@ before_install:
 #   - cd /tmp ; wget 
     - sudo echo 'deb http://debian.koha-community.org/koha squeeze main' >>  /etc/apt/sources.list
 
-    - wget -O - http://debian.koha-community.org/koha/gpg.asc | sudo apt-key add
+    - wget -O - http://debian.koha-community.org/koha/gpg.asc | sudo apt-key add - 
  
     - sudo apt-get update
     - sudo apt-get install  $( < install_misc/debian.packages)
