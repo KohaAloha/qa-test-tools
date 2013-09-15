@@ -67,6 +67,7 @@ before_install:
 #
 
 install:
+    - cd ~/
     - xargs sudo aptitude --schedule-only install < deb-deps.txt
     - sudo aptitude install
 
