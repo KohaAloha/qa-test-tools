@@ -37,8 +37,10 @@ before_install:
     - wget -O - http://debian.koha-community.org/koha/gpg.asc | sudo apt-key add - 
  
     - sudo apt-get update
-    - sudo apt-get install libfile-path-perl
-    - sudo apt-get install  $( < install_misc/debian.packages)
+#    - sudo apt-get install libfile-path-perl
+#    - sudo apt-get install  $( < install_misc/debian.packages)
+    - sudo dpkg --set-selections < install_misc/debian.packages
+    - sudo apt-get dselect-upgrade
 
 
     - sudo mysql -e 'create database koha'
